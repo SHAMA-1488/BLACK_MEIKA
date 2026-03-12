@@ -127,3 +127,32 @@ for item in cart.list():
 
 print("Общая сумма:", cart.get_total())
 """
+
+class ServerAPI:
+    def __init__(self, base_url):
+        self.base_url = base_url
+        self.token = None
+
+    def register_user(self, username, password):
+        pass
+
+    def login_user(self, username, password):
+        pass
+
+    def save_summary(self, summary_text, filename):
+        pass
+
+    def get_user_summaries(self):
+        pass
+
+    def get_summary(self, summary_id):
+        pass
+
+    def delete_summary(self, summary_id):
+        pass
+
+    def chat_with_ai_server(self, message):
+        pass
+
+    def upload_image(self, image_file):
+        pass
