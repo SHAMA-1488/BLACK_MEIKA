@@ -1,6 +1,6 @@
 #Наследования классов ООП
-"""
 #1
+"""
 class Geom(object):
     name = "geom"
     def __init__(self,x1,y1,x2,y2,):
@@ -229,4 +229,56 @@ try:
     pt3.color = "blue"
 except AttributeError as e:
     print("Ошибка:", e)
+"""
+#API ключ IMDB
+"""
+API_KEY = "b325c376"
+movie_name = "Avatar" 
+
+url = f"https://www.omdbapi.com/?i={movie_name}&apikey={API_KEY}"
+
+respond = requests.get(url)
+data = respond.json()
+
+print("называние: ", data["Title"])
+print("год выпуска: ", data.get("Year"))
+print("рейтинг IMDB", data.get("imdbRating"))
+print("Сюжет", data.get("Plot"))
+"""
+"""
+import requests
+class moviesearcher:
+    def __init__(self, api_key):
+        self.api_key = api_key
+    def search_movie(self, m):
+        url = "http://www.omdbapi.com/"
+        if m.startswith("tt"):
+            params = {"i": m, "apikey": self.api_key}
+        else:                 
+            params = {"t": m, "apikey": self.api_key}
+        response = requests.get(url, params=params)
+        data = response.json()
+        if data.get("Response") == "False":
+            return "ошибка!!!! введите название фильма правильно"
+        name = data.get("Title", "—")
+        year = data.get("Year", "—")
+        rating = data.get("imdbRating", "—")
+        return f"фильм или сериал: {name}, год: {year}, рейтинг: {rating}"
+print("Поиск фильма....")
+print("===================================================\n")
+api_key = input("введи API: ").strip()
+if not api_key:
+    print("пока.")
+else:
+    search = moviesearcher(api_key)
+    print("\nключ принят.")
+    print("enter для выхода\n")
+    while True:
+        title = input("название фильма: ").strip()
+        if title == "":
+            print("вы вышли")
+            break     
+        result = search.search_movie(title)
+        print(result)
+        print("-" * 50)
 """

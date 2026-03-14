@@ -1,0 +1,39 @@
+{
+    "users": [
+        {
+            "name": "sanek",
+            "age": 30,
+            "email": "six-seven@mail.com",
+            "id": 1
+        },
+        {
+            "name": "mrGIGA",
+            "age": 25,
+            "email": "niga@mail.com",
+            "id": 2
+        },
+        {
+            "name": "Mogger",
+            "age": 40,
+            "email": "chopped@mail.com",
+            "id": 3
+        }
+    ],
+    "transactions": [
+        {
+            "from_account": "sanek",
+            "to_account": "mrGIGA",
+            "amount": 67.67
+        },
+        {
+            "from_account": "mrGIGA",
+            "to_account": "Mogger",
+            "amount": 1488.88
+        },
+        {
+            "from_account": "Mogger",
+            "to_account": "sanek",
+            "amount": 52.52
+        }
+    ]
+}
